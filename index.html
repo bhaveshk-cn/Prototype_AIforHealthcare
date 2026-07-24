@@ -62,7 +62,7 @@ button{cursor:pointer}
 .hd-sp{flex:1}
 .hd-b{display:flex;align-items:center;padding:2px 9px;background:var(--bl);color:var(--blue);border-radius:20px;font-size:11px;font-weight:600}
 
-.stepper{display:flex;align-items:center;gap:0;padding:11px 22px;border-top:1px solid var(--bd);overflow-x:auto}
+.stepper{display:flex;align-items:center;gap:0;padding:8px 22px;border-top:1px solid var(--bd);overflow-x:auto}
 .step-item{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .step-dot{width:26px;height:26px;border-radius:50%;background:var(--s2);color:var(--tm);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;border:none;cursor:pointer;flex-shrink:0;transition:all .15s}
 .step-dot:hover{background:var(--bm)}
@@ -72,7 +72,7 @@ button{cursor:pointer}
 .step-lbl.on{color:var(--t1);font-weight:700}
 .step-line{width:26px;height:2px;background:var(--bd);flex-shrink:0;margin:0 6px}
 
-.cnt{flex:1;overflow-y:auto;padding:22px;-webkit-overflow-scrolling:touch;min-height:0}
+.cnt{flex:1;overflow-y:auto;padding:14px 22px 22px;-webkit-overflow-scrolling:touch;min-height:0}
 .uc-panel{display:none}
 .uc-panel.on{display:block}
 .step-panel{display:none}
@@ -318,8 +318,10 @@ tr[data-goto]{cursor:pointer}
 .mobile-nav{display:none}
 
 @media (max-width:900px){
-  body{overflow:visible;height:auto}
-  .app{position:relative}
+  body{overflow-y:auto;height:auto;min-height:100vh}
+  .app{height:auto;min-height:100vh;position:relative}
+  .main{overflow:visible;min-height:100vh}
+  .cnt{overflow-y:visible;min-height:0}
   .sb{position:fixed;inset:0 auto 0 0;z-index:900;width:260px;transform:translateX(-100%);transition:transform .22s ease;box-shadow:0 0 40px rgba(0,0,0,.25)}
   .sb.open{transform:translateX(0)}
   .menu-btn{display:flex}
@@ -1020,7 +1022,6 @@ tr[data-goto]{cursor:pointer}
       <!-- ============================================================ -->
       <div class="uc-panel" id="uc-engage">
         <div class="step-panel on" id="pe-1">
-          <div class="ph"><div><div class="ph-t">Patient Engagement Assistant</div><div class="ph-s">Grounded FAQ chat for the patient, with a live human handoff when the assistant reaches its limit.</div></div></div>
           <div class="chip-row" style="margin-bottom:10px" id="peTabNav">
             <button class="chip picked" data-pe-tab="chat">💬 Patient Chat</button>
             <button class="chip" data-pe-tab="console">🎧 Agent Console <span class="b br xs" style="margin-left:4px">1</span></button>
